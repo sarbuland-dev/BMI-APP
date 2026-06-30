@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 class Secondpage extends StatefulWidget {
   final double bmi;
+
   const Secondpage({
     super.key,
     required this.bmi,
@@ -88,7 +89,7 @@ class MyAppState extends State<Secondpage> {
                   ),
                   SizedBox(height: 30,width: double.infinity,),
                   Text('${widget.bmi.toStringAsFixed(1)}',style: TextStyle(fontWeight:FontWeight.w600,fontSize: 50,color: Colors.white),),
-                  Slider(value:widget.bmi.clamp(10, 40).toDouble(),thumbColor: Color(0xffb2e84d),activeColor: Color(0xff395220),min: 10,max: 40, onChanged: (value){
+                  Slider(value:widget.bmi,thumbColor: Color(0xffb2e84d),activeColor: Color(0xff395220),min: 1,max: 220, onChanged: (value){
                     setState(() {
                       widget.bmi;
                     });

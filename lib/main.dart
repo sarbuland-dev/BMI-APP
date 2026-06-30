@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practise/second.dart';
+import 'package:practise/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const Splashpage(),
     );
   }
 }
@@ -30,6 +31,7 @@ class _HomePageState extends State<HomePage> {
   int age=20;
   String Unit='Cm';
   double bmiheight=0;
+
   double? bmi;
 
   @override
@@ -238,14 +240,17 @@ class _HomePageState extends State<HomePage> {
                     bmiheight=height/100;
                   } else if(Unit=='Ft'){
                     bmiheight=height*0.3048;
+
                   } else if(Unit=='In'){
                     bmiheight=height*0.0254;
                   } else {
                     bmiheight=height/100;
                   }
                   double calculatedBmi = weight / (bmiheight * bmiheight);
+
+
                   setState(() { bmi=calculatedBmi; });
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Secondpage(bmi: calculatedBmi)));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Secondpage(bmi: calculatedBmi,)));
                 },
                 backgroundColor: Color(0xffb2e84d),
                 child: Row(
@@ -253,7 +258,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Text('Calculate', style: TextStyle(fontWeight: FontWeight(20), fontSize: 30)),
                     SizedBox(width: 10),
-                    Icon(Icons.repeat, color: Colors.black, size: 30),
+                    Icon(Icons.repeat, color: Colors.black87, size: 30),
                   ],
                 ),
               ),
