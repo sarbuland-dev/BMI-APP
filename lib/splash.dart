@@ -14,7 +14,7 @@ class _SplashpageState extends State<Splashpage> {
   @override
   void initState(){
     super.initState();
-    Timer(Duration(seconds: 5),(){
+    Timer(Duration(seconds: 2),(){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage(),));
     });
   }
@@ -28,7 +28,7 @@ class _SplashpageState extends State<Splashpage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.calculate,color: Color(0xffb2e84d),size: 60,),
+            Icon(Icons.calculate,color: Color(0xffdafd87),size: 60,),
             SizedBox(
               width: double.infinity,
               height: 20,
