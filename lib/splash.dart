@@ -14,7 +14,7 @@ class _SplashpageState extends State<Splashpage> {
   @override
   void initState(){
     super.initState();
-    Timer(Duration(seconds: 2),(){
+    Timer(Duration(seconds: 12),(){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage(),));
     });
   }
